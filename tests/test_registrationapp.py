@@ -56,9 +56,9 @@ def test_valid_registration(setup_teardown):
     driver = setup_teardown
     driver.get("http://127.0.0.1:5000/")
 
-    driver.find_element(By.NAME, "name").send_keys("Sumayya")
+    driver.find_element(By.NAME, "name").send_keys("Hasini")
     driver.find_element(By.NAME, "email").send_keys(
-        "sumayya@example.com"
+        "hasini@example.com"
     )
     driver.find_element(By.NAME, "phone").send_keys("9876543210")
 
@@ -74,4 +74,4 @@ def test_valid_registration(setup_teardown):
 
     message = driver.find_element(By.TAG_NAME, "h3").text
 
-    assert message == "Registration successful! Welcome, Sumayya."
+    assert message == "Registration successful! Welcome, Hasini."
