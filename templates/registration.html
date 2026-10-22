@@ -1,74 +1,39 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-
-    <script>
-        function validateForm() {
-            var name = document.forms["f1"]["name"].value.trim();
-            var email = document.forms["f1"]["email"].value.trim();
-            var password = document.forms["f1"]["pwd"].value;
-
-            if (name === "") {
-                alert("Name cannot be empty.");
-                return false;
-            }
-
-            if (email === "") {
-                alert("Email cannot be empty.");
-                return false;
-            }
-
-            if (password === "") {
-                alert("Password cannot be empty.");
-                return false;
-            }
-
-            if (password.length < 6) {
-                alert("Password must be at least 6 characters long.");
-                return false;
-            }
-
-            return true;
-        }
-    </script>
 </head>
-
 <body>
     <center>
         <h2>Student Registration Form</h2>
 
-        <form name="f1"
-              action="/submit"
-              method="POST"
-              onsubmit="return validateForm()">
+        <form action="/submit" method="POST">
 
-            Enter Your Name:
-            <input type="text" name="name">
-
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" name="name" required>
             <br><br>
 
-            Enter Your Email:
-            <input type="email" name="email">
-
+            <label for="email">Enter Your Email:</label>
+            <input type="email" id="email" name="email" required>
             <br><br>
 
-            Enter Your Password:
-            <input type="password" name="pwd">
-
+            <label for="phone">Enter Your Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
             <br><br>
 
-            Select Your Course:
-            <select name="course">
+            <label for="course">Select Your Course:</label>
+            <select id="course" name="course" required>
                 <option value="B.Tech">B.Tech</option>
                 <option value="M.Tech">M.Tech</option>
                 <option value="MBA">MBA</option>
             </select>
-
             <br><br>
 
             <input type="submit" name="sb" value="Submit">
+
         </form>
     </center>
 </body>
