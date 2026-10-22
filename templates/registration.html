@@ -6,11 +6,17 @@
 
     <script>
         function validateForm() {
-            var username = document.forms["f1"]["name"].value.trim();
+            var name = document.forms["f1"]["name"].value.trim();
+            var email = document.forms["f1"]["email"].value.trim();
             var password = document.forms["f1"]["pwd"].value;
 
-            if (username === "") {
+            if (name === "") {
                 alert("Name cannot be empty.");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Email cannot be empty.");
                 return false;
             }
 
@@ -31,7 +37,7 @@
 
 <body>
     <center>
-        <h2>Registration Form</h2>
+        <h2>Student Registration Form</h2>
 
         <form name="f1"
               action="/submit"
@@ -43,6 +49,11 @@
 
             <br><br>
 
+            Enter Your Email:
+            <input type="email" name="email">
+
+            <br><br>
+
             Enter Your Password:
             <input type="password" name="pwd">
 
@@ -50,15 +61,14 @@
 
             Select Your Course:
             <select name="course">
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="Web Development">Web Development</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="M.Tech">M.Tech</option>
+                <option value="MBA">MBA</option>
             </select>
 
             <br><br>
 
             <input type="submit" name="sb" value="Submit">
-
         </form>
     </center>
 </body>
