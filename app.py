@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -10,7 +11,7 @@ def index():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    username = request.form['username']
+    username = request.form['name']
 
     return render_template('success.html', name=username)
 
