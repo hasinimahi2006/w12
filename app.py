@@ -13,6 +13,7 @@ def index():
 def submit():
     username = request.form['name']
     email = request.form['email']
+    phone = request.form['phone']
 
     return render_template('success.html', name=username)
 
